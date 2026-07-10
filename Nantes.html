@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nantes FC</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- Premium Heritage Palette --- */
+        :root {
+            --pitch-green: #0b291b;       /* Deep vintage pitch green */
+            --stadium-dark: #071c12;      /* Dark accent shading */
+            --gold-bloom: #dfb15b;        /* Classic gold embroidery */
+            --gold-translucent: rgba(223, 177, 91, 0.15);
+            
+            --canvas-white: #ffffff;
+            --text-silver: #9ca3af;
+            --border-tint: #143d29;
+            
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Plus Jakarta Sans', sans-serif;
+            --transition-tactical: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fcfcfc;
+            color: #111827;
+            font-family: var(--font-sans);
+            line-height: 1.7;
+        }
+
+        /* --- Global Structural Container --- */
+        .wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        /* --- Header & Navigation Bar --- */
+        .site-header-container {
+            background-color: var(--pitch-green);
+            border-bottom: 1px solid var(--border-tint);
+        }
+
+        .site-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 0;
+        }
+
+        .brand-identity {
+            font-family: var(--font-serif);
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: var(--canvas-white);
+        }
+
+        .brand-identity span {
+            color: var(--gold-bloom);
+            font-weight: 400;
+        }
+
+        .back-link {
+            color: var(--gold-bloom);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: var(--transition-tactical);
+            opacity: 0.9;
+        }
+
+        .back-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        /* --- Hero Article Banner --- */
+        .article-hero {
+            background: radial-gradient(circle at center, var(--pitch-green) 0%, var(--stadium-dark) 100%);
+            padding: 80px 0;
+            color: var(--canvas-white);
+            text-align: left;
+            border-bottom: 1px solid var(--border-tint);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: var(--gold-bloom);
+            color: var(--stadium-dark);
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 6px 14px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .hero-image-frame {
+            width: 100%;
+            height: 380px; /* Gives the article banner an immersive, editorial feel */
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 30px; /* Generates breathing room below the title */
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border-tint);
+            background-color: var(--stadium-dark);
+        }
+
+        .hero-image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the graphic scales beautifully without distortion */
+            object-position: center;
+        }
+
+        /* Responsive height tweak for mobile devices */
+        @media (max-width: 768px) {
+            .hero-image-frame {
+                height: 220px;
+                margin-top: 20px;
+            }
+        }
+
+        .article-hero h1 {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            line-height: 1.2;
+            font-weight: 700;
+            max-width: 800px;
+        }
+
+        /* --- Main Content Area --- */
+        .article-body {
+            padding: 60px 0 80px;
+            font-size: 1.1rem;
+        }
+
+        .article-body p {
+            margin-bottom: 24px;
+            color: #374151;
+        }
+
+        .article-body h2 {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            color: var(--stadium-dark);
+            margin-top: 45px;
+            margin-bottom: 16px;
+            border-left: 4px solid var(--pitch-green);
+            padding-left: 15px;
+        }
+
+        .article-body h3 {
+            font-family: var(--font-serif);
+            font-size: 1.35rem;
+            color: var(--pitch-green);
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        /* --- Editorial Footer --- */
+        .editorial-footer {
+            background-color: var(--stadium-dark);
+            border-top: 1px solid var(--border-tint);
+            padding: 30px 0;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-silver);
+            letter-spacing: 0.5px;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .article-hero h1 {
+                font-size: 2.2rem;
+            }
+            .article-body h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Unified Header Navigation -->
+    <div class="site-header-container">
+        <header class="wrapper">
+            <div class="site-header">
+                <div class="brand-identity">The Cult Hero <span>Archive</span></div>
+                <a href="../index.html" class="back-link">&larr; Back to Stories</a>
+            </div>
+        </header>
+    </div>
+
+    <!-- Article Hero Banner Section -->
+    <section class="article-hero">
+        <div class="wrapper">
+            <span class="category-badge">Fallen Giants</span>
+            <h1>Nantes FC: The Canaries That Fell Out of the Nest</h1>
+
+            <div class="hero-image-frame">
+                <img src="../images/Nantes_FC.webp" alt="FC Nantes Crest Logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Editorial Body -->
+    <main class="wrapper">
+        <article class="article-body">
+            <p>Football is a game of extremes. On one end, you have the ambitious small clubs clawing their way up from nothing, driven by dreams bigger than their budgets. On the other, you have clubs that once stood at the very summit of their country’s football – winning everything, producing legends, defining an era – only to find themselves years later fighting relegation battles or, worse still, fighting for survival off the pitch entirely. Nantes FC belongs firmly to the second category. Once the dominant force in French football, the club from western France won eight Ligue 1 titles – level with Monaco, behind only Saint Étienne (10), Marseille (10), and Paris Saint Germain (14) and lifted the Coupe de France four times. Yet today they are a shadow of what they once were. This is the story of how that happened. </p>
+            
+            <h2>The Beginnings</h2>
+            <p>The club was founded in 1943 by French businessman Jean Le Guillou and five other co-founders. The club’s distinctive yellow and green home kit was inspired by the colors of Le Guillou’s jockey stripes. On 26th August 1945, Nantes played their first competitive match against CA Paris in the second division of French football, with promotion to the topflight the primary ambition.</p>
+            <img src="../images/jean_le_guillou.jpg" alt="Jean Le Guillou" height="400" width="400">
+            <p>Jean Le Guillou, the club’s founder</p>
+            <p>
+                That ambition took time to realize it. Several promotion attempts failed, and the club endured a period of financial difficulty, sporting instability, and upheaval in the presidency. To help address the financial difficulty, sporting instability, and upheaval in the presidency. To help address the financial strain, club president Marcel Saupin secured several municipal subsidies – a necessary measure, but one that could only go so far. 
+            </p>
+            <img src="../images/Marcel_Saupin.jpg" alt="Marcel Saupin" height="400" width="400">
+            <p>Marcel Saupin, the 1st club’s president</p>
+
+            <h2>The Start of Something Special (1960 - 1976)</h2>
+            <p>Stability arrived in 1959 when Jean Clerfeuille was appointed club president. A year later, Clefeuille brought in 39-year-old Spanish coach José Arribas, a man who would go on to define the club’s identity. Arribas introduced an attacking philosophy built on movement, short passing, and collective teamwork, primarily through a 4-2-4 formation – an approach that was as aesthetically pleasing as it was effective. </p>
+            <img src="../images/jose_arribas.jpg" alt="José Arribas" height="400" width="400">
+            <p>José Arribas</p>
+            <img src="../images/jean_clefeuille.jpeg" alt="Old Girona FC team photo" height="400" width="400">
+            <p>Jean Clerfeuille</p>
+
+            <p>Promotion to the first division finally came in 1962, and Nantes wasted no time making their mark. They finished eighth in their debut top-flight season before winning back-to-back league titles in 1964 and 1965. Jacky Simon was the driving force during this period, scoring 24 goals in the 1964-65 season and then extraordinary 36 the following year. Meanwhile, Bernard Blanchet – the club’s all-time leading scorer with 111 goals between 1963 and 1974 – formed the backbone of the attack throughout this era. </p>
+            <img src="../images/jacky_simon.jpg" alt="Jacky Simon" height="400" width="400">
+            <p>Jacky Simon, top goal scorer of the 1964/65 season</p>
+
+            <img src="../images/bernard_blanchet.jpg" alt="Bernard Blanchet" height="400" width="400">
+            <p>Bernard Blanchet, the club’s all-time leading scorer</p>
+
+            <p>
+                When Clerfeuille resigned in December 1968 after new signings failed to adequately replace retiring veterans, Louis Fonteneau took over as president. Under Fonteneau, a more structured sporting framework began to take shape. Robert Budzynski, a former Nantes player from 1963 to 1968, was appointed sporting director in 1970, while in 1973, Jean Claude Suaudeau – another former player from the club’s 1960s side – took charge of the youth academy. Arribas passed his football philosophy down to the next generation, and the results showed: Nantes won their third league title in 1973.  
+            </p>
+            <img src="../images/robert_budzynski.jpeg" alt="Robert Budzynski" height="400" width="400">
+            <p>Robert Budzynski, the club’s sporting director</p>
+
+            <p>
+                The squad of this era produced some outstanding individuals. Maxime Bossis, a technically accomplished full-back, went on to represent France internationally and was part of Michel Platini’s celebrated generation. Jean Paul Bertrand Demanes served as goalkeeper from 1969 to 1988 – known to supporters as “le Grand” - and holds the club record for appearances with 532. Henri Michel, an attacking midfielder and captain, was the undisputed leader of the side from a young age. Moved to a deeper midfield role by Arribas at the start of the 1972 season before returning to his preferred number eight position, Michel played 531 matches for the club between 1966 and 1982.  
+            </p>
+            <img src="../images/maxime_bossis.jpg" alt="Maxime Bossis" height="400" width="400">
+            <p>Maxime Bossis, Nantes full-back</p>
+            <img src="../images/demanes.jpg" alt="Jean Paul Bertrand Demanes" height="400" width="400">
+            <p>Jean Paul Bertrand Demanes, Nantes goalkeeper</p>
+            <img src="../images/Henri_Michel_(1976).png" alt="Henri Michel" height="400" width="400">
+            <p>Henri Michel, Nantes midfielder and captain</p>
+
+            <h2>Arribas' Successor(1976 - 1982)</h2>
+            <p>When José Arribas departed in 1976 after sixteen years, former Stade de Reims player and ex-Lorient coach Jean Vincent was appointed as his replacement. Vincent placed enormous trust in youth, regularly fielding players who would go on to become club legends: wingers Loïc Amisse and Bruno Baronchelli, midfielders Omar Sahnoun and Gilles Rampillon, and defender Patrice Rio all featured prominently under his management.</p>
+            <img src="../images/jean_vincent.jpg" alt="Jean Vincent" height="400" width="400">
+            <p>Jean Vincent</p>
+
+            <img src="../images/bruno_baronchelli.jpeg" alt="Bruno Baronchelli" height="400" width="400">
+            <p>Bruno Baronchelli, Nantes winger</p>
+
+            <p>
+                The results justified his faith. In his first season, Vincent guided Nantes to their fourth Ligue 1 title in 1977. In 1979, they won their first Coupe de France, beating AJ Auxerre 4-1 after extra time. A fifth league title followed in 1980, and in 1981 they reached the semifinals of the European Cup Winners’ Cup, where they were narrowly eliminated by Valencia CF.  
+            </p>
+
+            <img src="../images/coupe-de-france-1979-nantes.jpg" alt="Nantes vs. AJ Auxerre" height="400" width="400">
+            <p>Nantes player receiving Coupe de France trophy</p>
+
+            <h2>Golden Era and New Playstyle</h2>
+            <p>On the 3rd of March 1982, it was confirmed that Jean Claude Suaudeau would succeed Jean Vincent at the end of the season; the board having concluded that the club has lost its sense of collective direction. Suaudeau’s vision was distinctive: he wanted Nantes to play like the great Brazilian sides, with an emphasis on fluid movement, physical intensity, and the constant creation of space through intelligent off-ball runs. </p>
+            
+            <img src="../images/Jean-Claude_Suaudeau.jpg" alt="Jean Claude Suaudeau" height="400" width="400">
+            <p>Jean Claude Suaudeau, former Nantes youth academy coach</p>
+            
+            <p>The results were immediate. In 1982-83, Nantes won the Ligue 1 title by ten points over second-placed Bordeaux. Crucially, ten of the starting eleven that season came through the youth academy – a testament to Suaudeau’s long years of work developing talent from within. Bosnian striker Vahid Halilhodžić - who would later go on to manage the club – was the season’s top scorer with 27 goals. The only disappointment was a 3-2 defeat to PSG in the Coupe de France final. </p>
+
+            <img src="../images/vahid.webp" alt="Vahid Halilhodžić" height="400" width="400">
+            <p>Vahid Halilhodžić, former Nantes striker</p>
+
+            <p>
+                The mid-1980s saw another remarkable generation emerge from the Nantes academy. Didier Deschamps, now the manager of the French national team, began his career at the club. So too did Marcel Desailly, who would go on to win the World Cup and Champions League. Antoine Kombouaré also came through the ranks during this period.  
+            </p>
+
+            <img src="../images/didier_deschamps.webp" alt="Didier Deschamps" height="400" width="400">
+            <p>Didier Deschamps, former Nantes midfielder now France manager</p>
+
+            <p>
+                Seeking to complement this homegrown talent, club president Max Bouyer took a leaf from the book of French rivals like Marseille by pursuing more established signings – among them Belgian winger Frank Vercauteren. The results were mixed, but the club remained competitive. 
+            </p>
+
+            <img src="../images/marcel_desailly.jpeg" alt="Marcel Desailly" height="400" width="400">
+            <p>Marcel Desailly, former French defender</p>
+
+            <p>
+                The 1994-95 season stands as perhaps the greatest in the club’s history. Nantes went 32 league matches unbeaten – a French record at the time, since surpassed by PSG’s 36-game unbeaten run in 2016 – and won their seventh Ligue 1 title. The squad was laden with quality: Patrice Loko, Reynald Pedros, Christian Karembeu, and a young Claude Makélélé, who would later go on to become one of the most influential defensive midfielders in the world at Chelsea and Real Madrid. 
+            </p>
+
+            <img src="../images/Claude_Makélélé.jpg" alt="Claude Makélélé" height="400" width="400">
+            <p>Claude Makélélé, former Chelsea and Real Madrid Legend.</p>
+
+            <h2>The Fall</h2>
+            
+            <p>The years following 1995 marked the beginning of a long and painful decline. Club President Guy Scherrer, who had taken over in 1992, resigned in 1996 as results and relations deteriorated. Suaudeau – who had returned to the club in 1991 after Miroslav Blažević, the man who had replaced him in 1988, was sacked – finally departed for good in 1997.</p>
+            
+            <p>Raynald Denoueix, a former Nantes FC player was appointed manager of Nantes in 1997. Under his guidance, they won the Coupe de France in 1999 against Sedan, helped them win the Coupe de France in 2000 against 2-1 against Calais RUFC and helped them win their 8th and final Ligue 1 title. However, in the same year they won the Coupe de France, Nantes FC also survived relegation on the final day by a single point thanks to a goal scored by Marama Vahirua to win the game 1-0 against relegated Le Harve. </p>
+
+            <img src="../images/mickael_landreau.jpg" alt="Mickael Landreau" height="400" width="400">
+            <p>Mickael Landreau, former Nantes goalkeeper</p>
+
+            <p>From 2001, they went through a dramatic fall experiencing several disappointing seasons with many off-field issues. In the 2004 Coupe de la Ligue final, they lost penalties against Sochaux after Mickael Landreau failed to convert his Panenka penalty. The team were forced to change their playstyle after they could not keep their playstyle with the departures of experienced players such as Mickael Landreau, Sylvian Armand, Stéphane Ziani, and Jérémy Toulalan and survived relegation on the final day against Metz in 2005.</p>
+
+            <img src="../images/jeremy_toulalan.jpeg" alt="Jérémy Toulalan" height="400" width="400">
+            <p>Jérémy Toulalan, former Nantes midfielder</p>
+
+            <p>The club would eventually be relegated to the second division of French football in 2007 after spending 44 consecutive seasons in the top division despite their ambitious recruitment and mismanagement by their owners Socpresse a French corporation from 2000 to 2007. During their, Nantes FC went through six coaches in seven years while before Nantes FC only had 5 coaches in 40 years.</p>
+
+            <h2>Aftermath</h2>
+
+            <img src="../images/waldemar-kita.jpg" alt="Waldemar Kita" height="400" width="400">
+            <p>Waldemar Kita, current Nantes FC owner</p>
+            <p>After relegation in 2007, they were taken over by Polish businessman Waldemar Kita. Nantes returned to the Ligue 1 in 2008 before going straight back down to Ligue 2 in 2009. They would spend 4 seasons in Ligue 2 finishing as low as 15th place before promotion in 2013. In their third stint back in Ligue 1, they mainly finished in mid table. However, from 2022 onwards, they would finish in the bottom half of the table surviving from relegation before being relegated in 2026 after 13 years in Ligue 1. The only high from their time back in Ligue 1 was when they won their Coupe de France final against OGC Nice 2-0 and qualified for the 22/23 Europa League and the next season they reached the Coupe de France final again but lost 5-1 to Toulouse. Ahead of the 26/27 season, Nantes FC will be playing in the Ligue 2. Once a dominant force in France to becoming a fallen giant, there is a question that loom over our head. Will we ever see Nantes FC back at the top of French football? </p>
+            <img src="../images/coupe-de-france-win-2022.jpg" alt="Coupe de France Win 2022" height="400" width="400">
+            <p>Coupe de France Win 2022</p>
+        </article>
+    </main>
+
+    <!-- Unified Editorial Footer -->
+    <footer class="editorial-footer">
+        <div class="wrapper">
+            © 2026 The Cult Hero Archive. Built for the romantic football purist.
+        </div>
+    </footer>
+
+</body>
+</html>
