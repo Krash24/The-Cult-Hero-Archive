@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cult Hero Archive | Romantics & Realists</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- Premium Heritage Palette --- */
+        :root {
+            --pitch-green: #0b291b;       /* Deep vintage pitch green */
+            --stadium-dark: #071c12;      /* Dark accent shading */
+            --gold-bloom: #dfb15b;        /* Classic gold embroidery */
+            --gold-translucent: rgba(223, 177, 91, 0.15);
+            
+            --canvas-white: #ffffff;
+            --text-silver: #9ca3af;
+            --border-tint: #143d29;
+            
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Plus Jakarta Sans', sans-serif;
+            --transition-tactical: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--pitch-green);
+            color: var(--canvas-white);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+        }
+
+        /* --- Global Structural Container --- */
+        .wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 4%;
+        }
+
+        /* --- Header & Navigation Bar --- */
+        .site-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 0;
+            border-bottom: 1px solid var(--border-tint);
+        }
+
+        .brand-identity {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .brand-identity span {
+            color: var(--gold-bloom);
+            font-weight: 400;
+        }
+
+        .navigation-links {
+            display: flex;
+            gap: 28px;
+        }
+
+        .nav-item {
+            color: var(--canvas-white);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: var(--transition-tactical);
+            opacity: 0.8;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-family: inherit;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            opacity: 1;
+            color: var(--gold-bloom);
+        }
+
+        /* --- Immersive Centered Hero Arena --- */
+        .hero-banner {
+            padding: 100px 0 120px;
+            text-align: center;
+            background: radial-gradient(circle at center, var(--pitch-green) 0%, var(--stadium-dark) 100%);
+            border-bottom: 1px solid var(--border-tint);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background-color: var(--gold-bloom);
+            color: var(--stadium-dark);
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 6px 14px;
+            border-radius: 4px;
+            margin-bottom: 24px;
+        }
+
+        .hero-banner h1 {
+            font-family: var(--font-serif);
+            font-size: 3.8rem;
+            line-height: 1.15;
+            max-width: 900px;
+            margin: 0 auto 24px;
+            font-weight: 700;
+        }
+
+        .hero-banner p {
+            color: var(--text-silver);
+            font-size: 1.15rem;
+            max-width: 720px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* --- Feed Framework Section --- */
+        .feed-container {
+            background-color: #fcfcfc;
+            color: #111827;
+            padding: 60px 0 80px;
+        }
+
+        .archive-anchor-header {
+            border-left: 4px solid var(--pitch-green);
+            padding-left: 20px;
+            margin-bottom: 45px;
+        }
+
+        .archive-anchor-header h2 {
+            font-family: var(--font-serif);
+            font-size: 2rem;
+            color: var(--stadium-dark);
+            margin-bottom: 6px;
+        }
+
+        .archive-anchor-header p {
+            color: #4b5563;
+            font-size: 0.95rem;
+        }
+
+        /* --- Clean Column Journal Grid --- */
+        .journal-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .journal-entry {
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition-tactical);
+        }
+
+        .entry-image-frame {
+            width: 100%;
+            height: 240px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e5e7eb;
+            background-color: #f3f4f6;
+        }
+
+        .entry-image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            transition: var(--transition-tactical);
+        }
+
+        .entry-image-frame img.full-portrait {
+            object-fit: contain;
+            background-color: #5ea1e2; /* Keeps the frame background uniform */
+        }
+
+        .journal-entry:hover .entry-image-frame img {
+            transform: scale(1.04);
+        }
+
+        .entry-pill {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #4b5563;
+            margin-bottom: 8px;
+        }
+
+        .journal-entry h3 {
+            font-family: var(--font-serif);
+            font-size: 1.35rem;
+            color: var(--stadium-dark);
+            line-height: 1.35;
+            margin-bottom: 12px;
+        }
+
+        .journal-entry p {
+            color: #4b5563;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .read-story-trigger {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: #2563eb;
+            text-decoration: none;
+            margin-top: auto;
+            transition: var(--transition-tactical);
+        }
+
+        .read-story-trigger:hover {
+            color: var(--pitch-green);
+            text-decoration: underline;
+        }
+
+        /* --- Footer Context Banner --- */
+        .editorial-footer {
+            background-color: var(--stadium-dark);
+            border-top: 1px solid var(--border-tint);
+            padding: 30px 0;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-silver);
+            letter-spacing: 0.5px;
+        }
+
+        /* --- Responsive Viewports --- */
+        @media (max-width: 1024px) {
+            .journal-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .site-header {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            .hero-banner h1 {
+                font-size: 2.4rem;
+            }
+            .journal-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            .entry-image-frame {
+                height: 280px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="wrapper">
+        <div class="site-header">
+            <div class="brand-identity">The Cult Hero <span>Archive</span></div>
+            <nav class="navigation-links">
+                <button class="nav-item active" data-tab="all">All Stories</button>
+                <button class="nav-item" data-tab="giants">Fallen Giants</button>
+                <button class="nav-item" data-tab="wonders">One-Season Wonders</button>
+                <button class="nav-item" data-tab="icons">Iconic Players</button>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-banner">
+        <div class="wrapper">
+            <span class="hero-badge">Nostalgia Meets Data</span>
+            <h1>Where Football Romance Meets Advanced Analytics</h1>
+            <p>Deconstructing the legendary seasons, forgotten giants, and cult heroes who captured our imagination, backed by the metrics that proved their genius.</p>
+        </div>
+    </section>
+
+    <main class="feed-container">
+        <div class="wrapper">
+            
+            <div class="archive-anchor-header">
+                <h2 id="dynamic-title">All Archive Entries</h2>
+                <p id="dynamic-desc">Exploring the complete history of football's most fascinating characters and clubs.</p>
+            </div>
+
+            <div class="journal-grid" id="story-matrix">
+
+                <div class="journal-entry" data-category="giants">
+                    <div class="entry-image-frame">
+                        <img src="images/Nantes_FC.webp" alt="FC Nantes Crest Logo">
+                    </div>
+                    <span class="entry-pill">Fallen Giants</span>
+                    <h3>FC Nantes: The Canaries That Fell Out of the Nest</h3>
+                    <p>Once the dominant force in French football with eight titles, discover the structural collapse that sent this powerhouse into the second tier.</p>
+                    <a href="articles/Nantes.html" class="read-story-trigger">Read The Full Story &rarr;</a>
+                </div>
+                
+                <div class="journal-entry" data-category="wonders">
+                    <div class="entry-image-frame">
+                        <img src="images/Girona.jpg" alt="Girona FC Crest Logo">
+                    </div>
+                    <span class="entry-pill">One-Season Wonders</span>
+                    <h3>Girona FC: The Catalan Fairy Tale That Defied the Odds</h3>
+                    <p>Discover how a modest club from Catalonia rose from obscurity to take on Europe's elite, shocking the football world when no one believed they could.</p>
+                    <a href="articles/Girona.html" class="read-story-trigger">Read The Full Story &rarr;</a>
+                </div>
+
+                <div class="journal-entry" data-category="icons">
+                    <div class="entry-image-frame">
+                        <img src="images/Hidetoshi_Nakata.jpeg" class="full-portrait" alt="Hidetoshi Nakata playing for Japan">
+                    </div>
+                    <span class="entry-pill">Iconic Players</span>
+                    <h3>The Rebel Genius Who Walked Away: How Hidetoshi Nakata Chose Joy Over Football’s Millions </h3>
+                    <p>At just 29 years old, at the absolute peak of his physical prime, Asia's most marketable icon walked away from football's millions to save his love for the game.</p>
+                    <a href="articles/Nakata.html" class="read-story-trigger">Read The Full Story &rarr;</a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="editorial-footer">
+        <div class="wrapper">
+            © 2026 The Cult Hero Archive. Built for the romantic football purist.
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabButtons = document.querySelectorAll('.nav-item');
+            const items = document.querySelectorAll('.journal-entry');
+            const headline = document.getElementById('dynamic-title');
+            const subtext = document.getElementById('dynamic-desc');
+
+            const copyMeta = {
+                all: {
+                    title: "All Archive Entries",
+                    desc: "Exploring the complete history of football's most fascinating characters and clubs."
+                },
+                giants: {
+                    title: "Fallen Giants",
+                    desc: "Deep historical deep-dives into legendary powerhouses experiencing modern crises."
+                },
+                wonders: {
+                    title: "One-Season Wonders",
+                    desc: "Underdog stories and miraculous seasons where teams defied the data layers entirely."
+                },
+                icons: {
+                    title: "Iconic Players",
+                    desc: "Slick, fiercely independent technicians who prioritized pure joy over corporate checks."
+                }
+            };
+
+            tabButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    tabButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const selection = btn.getAttribute('data-tab');
+                    
+                    if(copyMeta[selection]) {
+                        headline.textContent = copyMeta[selection].title;
+                        subtext.textContent = copyMeta[selection].desc;
+                    }
+
+                    items.forEach(item => {
+                        if (selection === 'all' || item.getAttribute('data-category') === selection) {
+                            item.style.display = 'flex';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
