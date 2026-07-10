@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Girona FC</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- Premium Heritage Palette --- */
+        :root {
+            --pitch-green: #0b291b;       /* Deep vintage pitch green */
+            --stadium-dark: #071c12;      /* Dark accent shading */
+            --gold-bloom: #dfb15b;        /* Classic gold embroidery */
+            --gold-translucent: rgba(223, 177, 91, 0.15);
+            
+            --canvas-white: #ffffff;
+            --text-silver: #9ca3af;
+            --border-tint: #143d29;
+            
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Plus Jakarta Sans', sans-serif;
+            --transition-tactical: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fcfcfc;
+            color: #111827;
+            font-family: var(--font-sans);
+            line-height: 1.7;
+        }
+
+        /* --- Global Structural Container --- */
+        .wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        /* --- Header & Navigation Bar --- */
+        .site-header-container {
+            background-color: var(--pitch-green);
+            border-bottom: 1px solid var(--border-tint);
+        }
+
+        .site-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 0;
+        }
+
+        .brand-identity {
+            font-family: var(--font-serif);
+            font-size: 1.35rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: var(--canvas-white);
+        }
+
+        .brand-identity span {
+            color: var(--gold-bloom);
+            font-weight: 400;
+        }
+
+        .back-link {
+            color: var(--gold-bloom);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: var(--transition-tactical);
+            opacity: 0.9;
+        }
+
+        .back-link:hover {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        /* --- Hero Article Banner --- */
+        .article-hero {
+            background: radial-gradient(circle at center, var(--pitch-green) 0%, var(--stadium-dark) 100%);
+            padding: 80px 0;
+            color: var(--canvas-white);
+            text-align: left;
+            border-bottom: 1px solid var(--border-tint);
+        }
+
+        .category-badge {
+            display: inline-block;
+            background-color: var(--gold-bloom);
+            color: var(--stadium-dark);
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 6px 14px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .hero-image-frame {
+            width: 100%;
+            height: 380px; /* Gives the article banner an immersive, editorial feel */
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 30px; /* Generates breathing room below the title */
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border-tint);
+            background-color: var(--stadium-dark);
+        }
+
+        .hero-image-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensures the graphic scales beautifully without distortion */
+            object-position: center;
+        }
+
+        .article-hero h1 {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            line-height: 1.2;
+            font-weight: 700;
+            max-width: 800px;
+        }
+
+        /* --- Main Content Area --- */
+        .article-body {
+            padding: 60px 0 80px;
+            font-size: 1.1rem;
+        }
+
+        .article-body p {
+            margin-bottom: 24px;
+            color: #374151;
+        }
+
+        .article-body h2 {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            color: var(--stadium-dark);
+            margin-top: 45px;
+            margin-bottom: 16px;
+            border-left: 4px solid var(--pitch-green);
+            padding-left: 15px;
+        }
+
+        .article-body h3 {
+            font-family: var(--font-serif);
+            font-size: 1.35rem;
+            color: var(--pitch-green);
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        /* --- Editorial Footer --- */
+        .editorial-footer {
+            background-color: var(--stadium-dark);
+            border-top: 1px solid var(--border-tint);
+            padding: 30px 0;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-silver);
+            letter-spacing: 0.5px;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            .article-hero h1 {
+                font-size: 2.2rem;
+            }
+            .article-body h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Unified Header Navigation -->
+    <div class="site-header-container">
+        <header class="wrapper">
+            <div class="site-header">
+                <div class="brand-identity">The Cult Hero <span>Archive</span></div>
+                <a href="../index.html" class="back-link">&larr; Back to Stories</a>
+            </div>
+        </header>
+    </div>
+
+    <!-- Article Hero Banner Section -->
+    <section class="article-hero">
+        <div class="wrapper">
+            <span class="category-badge">One-Season Wonders</span>
+            <h1>Girona FC: The Catalan Fairy Tale That Defied the Odds</h1>
+            <div class="hero-image-frame">
+                <img src="../images/Girona.jpg" alt="Girona FC Crest Logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Editorial Body -->
+    <main class="wrapper">
+        <article class="article-body">
+            <p>In football, we have seen many stories of clubs rising from obscurity to the very top of the game. You don’t need to look far for inspiration. Paris Saint Germain (PSG) was a club that was only founded in 1970 - late by any standard – yet they went on to win the most Ligue 1 titles and become the most successful French Club in Europe, winning their first two Champions Leagues back to back in 2025 and 2026.</p>
+            
+            <p>RB Leipzig were built completely from scratch in 2009 and their rise through German football was remarkable. It took them just seven years to go from the fifth tier to finish third in their debut Bundesliga season. Three years later, they reached the Champions League semifinal, only to be knocked out by runners-up PSG.</p>
+            
+            <p>But not every club has a story like that. Some appear only for one season and disappear like dust. In this article I’ll tell you Girona FC - a small club from the modest Catalan city of Girona - went from a regular second division side to competing in the UEFA Champions League for the first time in their 96-year history.</p>
+
+            <h2>The Humble Beginnings</h2>
+            <img src="../images/Girona_FC_old_picture.png" alt="Old Girona FC team photo" height="400" width="400">
+            <p>Old Girona FC team photo</p>
+            <p>Girona was founded on 23rd July 1930 and started out in the third division of Spanish Football. They earned promotion to the Segunda División in 1934, but after six seasons were relegated in 1943. Over the following decades they bounced between the second and third tiers, and by the early 1980s had dropped as far as the fifth division. After nearly half a century, they finally returned to the Segunda Division in 2008 and spent nine seasons there before achieving promotion to La Liga for the first time in 2017 – the same year they were acquired by the City Football Group, owners of Manchester City and New York City FC, among others. They were relegated in 2019 but returned to the topflight in 2022.</p>
+
+            <h2>Recruitment</h2>
+            <p>In 2023, Girona finished 10th in their first season back in the La Liga. For a club of their size, a mid-table finish felt like a triumph. But with the backing of the City Football Group, the ambition was clear – qualifying for Europe for the first time in the club’s history.</p>
+            
+            <img src="../images/artem_dovybk.jpg" alt="Artem Dovbyk at Girona FC" height="400" width="400">
+            <p>Artem Dovbyk at Girona FC</p>
+
+            <p>That summer, they brought in a wave of new players. Several arrived on loan from CFG clubs, including Yan Couto and Yangel Herrera from Manchester City and Savinho from Troyes. Eric Garcia and Pablo Torre joined on loan from rivals FC Barcelona. Meanwhile, the club raised around €19.5 million through sales, including Santiago Bueno to Wolves for €12 million, Oriol Romeu to Barcelona for €5 million, and Ramon Terrats to Villareal for €2.5 million. With that income, they brought in experienced heads: former Manchester United, Ajax, and Bayern Munich defender Daley Blind on a free transfer, and Fulham goalkeeper Paulo Gazzaniga for €3 million. Their most significant signing, however, was Ukrainian striker Artem Dovbyk from Dnipro-1 for €7 million – a move that would prove inspired.</p>
+
+            <img src="../images/Daley_Blind.jpg" alt="Daley Blind at Girona FC" height="400" width="400">
+            <p>Daley Blind at Girona FC</p>
+            
+            <h2>The Rise to Europe</h2>
+            <img src="../images/girona-fc-2023-24.jpg" alt="Girona 23/24 squad photo" height="400" width="400">
+            <p>Girona 23/24 squad photo</p>
+            <p>Under manager Míchel, Girona hit the ground running, going unbeaten in their first seven games and winning six in a row. They beat Sevilla (1-0), Granada (4-2), Mallorca (5-3), and Villarreal (2-1) before eventually losing to Real Madrid 3-0. What followed was even more impressive – a 14-game unbeaten run that announced Girona to the rest of Europe. They thrashed rivals Barcelona 4-2 away, and saw off Atlético Madrid in a breathless 4-3 victory, with Iván Martín scoring a 91st-minute winner to cancel out a hat-trick from Álvaro Morata. They also dismantled Sevilla 5-1 at home, with Dovbyk netting a stunning hat-trick in just six first-half minutes. Real Madrid eventually brought them back down to earth with a 4-0 win that sent the champions top of the table. From there, Girona’s form became inconsistent, but it didn’t matter – the title was never the goal. A second 4-2 win over Barcelona in the final weeks of the season sealed Champions League qualification, a historic first for the club.</p>
+
+            <img src="../images/michel.jpeg" alt="Míchel, Girona FC manager" height="400" width="400">
+            <p>Míchel, Girona FC manager</p>
+            <h2>Statistics</h2>
+            <p>Girona finished third with 81 points, just four points behind second-placed Barcelona. They spent most of the season in the top three from matchday three and ended the campaign as the second highest scorers in the division with 85 goals, just two behind Real Madrid.</p>
+            
+            <img src="../images/gazzaniga.jpg" alt="Paulo Gazzaniga at Girona FC" height="400" width="400">
+            <p>Paulo Gazzaniga at Girona FC</p>
+            <p>Dovbyk was the standout performer, scoring 24 goals to claim the Pichichi award – finishing ahead of Villarreal’s Alexander Sørloth and Barcelona’s Robert Lewandowski. Brazilian winger Savinho contributed 11 assists, level with Athletic Bilbao’s Nico Williams, just behind La Liga’s assist leader Álex Baena on 14. Gazzaniga kept 12 clean sheets across 38 league appearances.</p>
+            <img src="../images/savio.jpg" alt="Savinho at Girona FC" height="400" width="400">
+            <p>Savinho at Girona FC</p>
+
+            <h2>Tactics</h2>
+            <h3>Formation</h3>
+            <p>Girona operated in a 4-2-3-1 system built around an attacking, space-exploiting philosophy that made them one of the most entertaining sides in La Liga.</p>
+            
+            <h3>Wide Play</h3>
+            <p>On the flanks, the full backs and wingers occupied different channels to pull defences apart. If the full back pushed wide, the wingers moved inside to exploit the space, and vice versa. The right side was typically handled by Yan Couto and Viktor Tsyhankov, while Daley Blind and Savinho operated on the left. When play switched flanks, wide players looked to arrive unmarked at the far post. Often these wide attacks developed into 1v1 situations or 3v2 overloads, with a number eight – usually Yangel Herrera or Aleix García - pushing up in support.</p>
+            
+            <img src="../images/yan_couto.jpg" alt="Yan Couto at Girona FC" height="400" width="400">
+            <p>Yan Couto at Girona FC</p>
+            <h3>Central Play</h3>
+            <p>The central midfielders – primarily Aleix García, Yangel Herrera, and Iván Martín - formed staggered shapes to create numerical overloads through the middle. A ball carrier would draw in opponents before a third runner exploited the space left behind in the final third</p>
+            <img src="../images/aleix_garcia.jpg" alt="Aleix García at Girona FC" height="400" width="400">
+            <p>Aleix García at Girona FC</p>
+
+            <h3>Attacking Play</h3>
+            <p>Artem Dovybk made runs in behind, exploiting spaces created when Savinho and Tsyhankov drew defenders wide. Cristian Stuani, meanwhile, used the wider spaces vacated by supporting runs, driving inward to get shots off.</p>
+
+            <img src="../images/stuani.jpeg" alt="Cristian Stuani at Girona FC" height="400" width="400">
+            <p>Cristian Stuani at Girona FC</p>
+
+            <h3>Building Play</h3>
+            <p>Centre backs Eric García and David López split wide to support Gazzaniga in build-up, with Blind and Couto pushing higher depending on the opposition press. Blind could also invert into a back-three alongside García and López, shifting the shape to a 3-2-4-1.</p>
+
+            <img src="../images/eric_garcia.webp" alt="Eric García at Girona FC" height="400" width="400">
+            <p>Eric García at Girona FC</p>
+
+            <h3>Possession</h3>
+            <p>Without the ball, Aleix García and Yangel Herrera formed a double pivot, with Viktor Tsyhankov, Savinho, and Portu protecting the central spaces in front of them. In the low block, the wingers and midfielders dropped back to support the full backs, funneling opponents inside into congested areas rather than allowing crosses. The centre backs stayed compact and minimised gaps between the lines to limit transition opportunities.</p>
+
+            <img src="../images/viktor.jpeg" alt="Viktor Tsyhankov at Girona FC" height="400" width="400">
+            <p>Viktor Tsyhankov at Girona FC</p>
+
+            <h2>Aftermath</h2>
+            <img src="../images/Girona_celebrate_UCL.jpg" alt="girona celebrate UCL qualification" height="400" width="400">
+            <p>Girona celebrate UCL qualification</p>
+            <p>Champions League qualification came at a cost. In the summer of 2024, Girona sold several key figures, including Dovbyk to Roma for €30.5 million and Aleix García to Bayer Leverkusen for €18 million. Their debut UCL campaign proved tough, and in La Liga they survived by just a single point above reunited Leganés - finishing 16th. The following season brought the worst news: Girona were relegated back to the Segunda División after four years in the topflight, finishing 19th with 41 points. Míchel, the architect of it all, has since agreed to take charge of Ajax.</p>
+            
+            <img src="../images/girona_FC_relegated.jpg" alt="Girona FC players after relegation" height="400" width="400">
+            <p>Girona FC players after relegation</p>
+
+            <h2>Conclusion</h2>
+            <p>Girona will be playing second-division football in 2026/27 - just two years after competing in the Champions League. The manager is gone. The star players have moved on. But the story of that 2023/24 season – a small Catalan club taking on Europe’s elite and winning – will not be forgotten quickly. Whether they can find their way back to La Liga and recapture that magic remains to be seen. For now, it stands as one of the great modern fairy tales of Spanish football.</p>
+        </article>
+    </main>
+
+    <!-- Unified Editorial Footer -->
+    <footer class="editorial-footer">
+        <div class="wrapper">
+            © 2026 The Cult Hero Archive. Built for the romantic football purist.
+        </div>
+    </footer>
+
+</body>
+</html>
